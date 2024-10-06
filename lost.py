@@ -32,7 +32,7 @@ fs = gridfs.GridFS(mydb)
 st.title("失物招領網站")
 
 # 創建三個分頁，將"查看所有遺失物"和"遺失物列表"位置交換
-tab1, tab3, tab2 = st.tabs(["失物招領通報", "查看所有遺失物", "遺失物列表（僅限管理者）"])
+tab1, tab3, tab2 = st.tabs(["失物通報", "查看所有遺失物", "遺失物列表（僅限管理者）"])
 
 # 失物招領通報
 with tab1:
@@ -158,7 +158,7 @@ with tab3:
 
 # 添加身份驗證以查看管理者頁面
 with tab2:
-    st.header("遺失物列表與刪除功能（僅限管理者）")
+    st.header("遺失物列表（僅限管理者）")
 
     # 讓用戶輸入密碼
     password = st.text_input("請輸入管理者密碼以檢視資料", type="password")
