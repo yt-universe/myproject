@@ -1,3 +1,5 @@
+from pymongo.server_api import ServerApi
+from pymongo.mongo_client import MongoClient
 import streamlit as st
 import pandas as pd
 import pymongo
@@ -10,16 +12,31 @@ import io
 # 設定 Streamlit 頁面為寬模式
 st.set_page_config(layout="wide")
 
-# 連接到 MongoDB 資料庫
+'''# 連接到 MongoDB 資料庫
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 # 創建及選擇數據庫
 mydb = client["lost_database"]
 
 # 創建及選擇集合
+mycollection = mydb["lose_found"] '''
+
+# 替換原本的本地 MongoDB 連接，改為 MongoDB Atlas 連接字串
+
+# 替換 <your_username> 和 <your_password> 為你的 MongoDB Atlas 帳戶資訊
+uri = "mongodb+srv://<your_username>:<your_password>@cluster0.sox2l.mongodb.net/?retryWrites=true&w=majority"
+
+# 建立 MongoDB 客戶端並連接到 Atlas
+client = MongoClient(uri, server_api=ServerApi('1'))
+
+# 選擇你在 MongoDB Atlas 中建立的資料庫
+mydb = client["lost_database"]
+
+# 選擇集合
 mycollection = mydb["lose_found"]
 
 # 初始化 GridFS
 fs = gridfs.GridFS(mydb)
+
 
 # 網站的標題
 st.title("失物招領網站")
@@ -190,5 +207,4 @@ with tab2:
                     st.warning(f"已刪除物品: {row['name']}")
                     st.experimental_rerun()  # 刷新頁面
     else:
-        st.error("密碼錯誤，請重新嘗試一次")
-# Ttttttttttt
+        st.error("密碼錯誤，請重新嘗試")
