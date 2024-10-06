@@ -12,7 +12,7 @@ import io
 st.set_page_config(layout="wide")
 
 # 替換 <your_username> 和 <your_password> 為你的 MongoDB Atlas 帳戶資訊
-uri = "mongodb+srv://lost:password@cluster0.vg0pt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = "mongodb+srv://lost:aaa123@cluster0.vg0pt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # 建立 MongoDB 客戶端並連接到 Atlas
 client = MongoClient(uri, server_api=ServerApi('1'))
