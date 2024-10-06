@@ -190,4 +190,5 @@ with tab2:
                     st.warning(f"已刪除物品: {row['name']}")
                     st.experimental_rerun()  # 刷新頁面
     else:
-        st.error("密碼錯誤，請重新嘗試")
+        st.error("密碼錯誤，請重新嘗試一次")
+# Ttttttttttt
