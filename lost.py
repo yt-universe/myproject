@@ -23,7 +23,7 @@ mycollection = mydb["lose_found"] '''
 # 替換原本的本地 MongoDB 連接，改為 MongoDB Atlas 連接字串
 
 # 替換 <your_username> 和 <your_password> 為你的 MongoDB Atlas 帳戶資訊
-uri = "mongodb+srv://aaa0972947323:12@cluster0.lkadm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = "mongodb+srv: // lost: aaa123@cluster0.vg0pt.mongodb.net/?retryWrites = true & w = majority & appName = Cluster0"
 
 # 建立 MongoDB 客戶端並連接到 Atlas
 client = MongoClient(uri, server_api=ServerApi('1'))
