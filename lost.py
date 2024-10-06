@@ -1,8 +1,7 @@
-from pymongo.server_api import ServerApi
 from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 import streamlit as st
 import pandas as pd
-import pymongo
 from bson.objectid import ObjectId
 from datetime import datetime
 import gridfs
@@ -12,23 +11,14 @@ import io
 # 設定 Streamlit 頁面為寬模式
 st.set_page_config(layout="wide")
 
-'''# 連接到 MongoDB 資料庫
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-# 創建及選擇數據庫
-mydb = client["lost_database"]
-
-# 創建及選擇集合
-mycollection = mydb["lose_found"] '''
-
-# 替換原本的本地 MongoDB 連接，改為 MongoDB Atlas 連接字串
-
 # 替換 <your_username> 和 <your_password> 為你的 MongoDB Atlas 帳戶資訊
-uri = "mongodb+srv: // lost: aaa123@cluster0.vg0pt.mongodb.net/?retryWrites = true & w = majority & appName = Cluster0"
+uri = "mongodb+srv://lost:aaa123@cluster0.vg0pt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # 建立 MongoDB 客戶端並連接到 Atlas
 client = MongoClient(uri, server_api=ServerApi('1'))
 
-# 選擇你在 MongoDB Atlas 中建立的資料庫
+
+# 選擇資料庫
 mydb = client["lost_database"]
 
 # 選擇集合
